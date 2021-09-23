@@ -6,6 +6,12 @@ namespace MinimalExample
 {
 	partial class MinimalPlayer : Player
 	{
+		public override void CreateHull()
+		{
+			CollisionGroup = CollisionGroup.Player;
+			AddCollisionLayer( CollisionLayer.Player );
+			SetupPhysicsFromAABB( PhysicsMotionType.Keyframed, new Vector3( -16, -16, 0 ), new Vector3( 16, 16, 56 ) );
+		}
 		public override void Respawn()
 		{
 
@@ -32,6 +38,7 @@ namespace MinimalExample
 			EnableShadowInFirstPerson = true;
 
 			base.Respawn();
+			CreateHull();
 	
 		}
 
