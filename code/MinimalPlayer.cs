@@ -10,11 +10,6 @@ namespace MinimalExample
 		public override void Respawn()
 		{
 
-
-			CreateHull();
-
-			Game.Current?.MoveToSpawnpoint( this );
-			ResetInterpolation();
 			SetModel( "models/citizen/citizen.vmdl" );
 
 			//
@@ -36,6 +31,8 @@ namespace MinimalExample
 			EnableDrawing = true;
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
+
+			base.Respawn();
 	
 		}
 
