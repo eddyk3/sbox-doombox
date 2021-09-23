@@ -7,11 +7,11 @@ namespace MinimalExample
 	partial class MinimalPlayer : Player
 	{
 
-		public override void CreateHull()
+		public virtual void CreateHull()
 		{
 			CollisionGroup = CollisionGroup.Player;
 			AddCollisionLayer( CollisionLayer.Player );
-			SetupPhysicsFromAABB( PhysicsMotionType.Keyframed, new Vector3( -16, -16, 0 ), new Vector3( 16, 16, 72 ) );
+			SetupPhysicsFromAABB( PhysicsMotionType.Keyframed, new Vector3( -16, -16, 0 ), new Vector3( 16, 16, 56 ) );
 
 			//var capsule = new Capsule( new Vector3( 0, 0, 16 ), new Vector3( 0, 0, 72 - 16 ), 32 );
 			//var phys = SetupPhysicsFromCapsule( PhysicsMotionType.Keyframed, capsule );
@@ -50,6 +50,7 @@ namespace MinimalExample
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
 
+			base.Respawn();
 			CreateHull();
 	
 		}
