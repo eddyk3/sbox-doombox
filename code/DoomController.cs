@@ -60,7 +60,7 @@ namespace Sandbox
 
 
 		// Duck body height 32
-		// Eye Height 64
+		// Eye Height 41
 		// Duck Eye Height 28
 
 		protected Vector3 mins;
