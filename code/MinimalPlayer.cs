@@ -35,7 +35,7 @@ namespace MinimalExample
 			EnableDrawing = true;
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
-			CreateHull();
+			base.Respawn();
 
 		}
 
