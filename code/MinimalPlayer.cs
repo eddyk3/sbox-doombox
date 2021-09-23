@@ -6,10 +6,8 @@ namespace MinimalExample
 {
 	partial class MinimalPlayer : Player
 	{
-
 		public override void Respawn()
 		{
-
 			SetModel( "models/citizen/citizen.vmdl" );
 
 			//
@@ -23,7 +21,7 @@ namespace MinimalExample
 			Animator = new StandardPlayerAnimator();
 
 			//
-			// Use FirstPersonCamera (you can make your own Camera for 100% control)
+			// Use ThirdPersonCamera (you can make your own Camera for 100% control)
 			//
 			Camera = new FirstPersonCamera();
 
@@ -31,9 +29,9 @@ namespace MinimalExample
 			EnableDrawing = true;
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
+			TickPlayerUse();
 
 			base.Respawn();
-	
 		}
 
 		/// <summary>
@@ -55,15 +53,12 @@ namespace MinimalExample
 			if ( IsServer && Input.Pressed( InputButton.Attack1 ) )
 			{
 				var ragdoll = new ModelEntity();
-				ragdoll.SetModel( "models/citizen/citizen.vmdl" );  
+				ragdoll.SetModel( "models/citizen/citizen.vmdl" );
 				ragdoll.Position = EyePos + EyeRot.Forward * 40;
 				ragdoll.Rotation = Rotation.LookAt( Vector3.Random.Normal );
 				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
 				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 1000;
 			}
-
-			TickPlayerUse();
-
 		}
 
 		public override void OnKilled()
