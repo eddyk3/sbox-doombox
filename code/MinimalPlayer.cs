@@ -50,7 +50,6 @@ namespace MinimalExample
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
 
-			base.Respawn();
 			CreateHull();
 	
 		}
