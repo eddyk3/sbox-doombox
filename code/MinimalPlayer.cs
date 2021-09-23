@@ -6,6 +6,12 @@ namespace MinimalExample
 {
 	partial class MinimalPlayer : Player
 	{
+		public override void CreateHull()
+		{
+			base.CreateHull();
+			SetupPhysicsFromAABB( PhysicsMotionType.Keyframed, new Vector3( -16, -16, 0 ), new Vector3( 16, 16, 56 ) );
+		}
+
 		public override void Respawn()
 		{
 			SetModel( "models/citizen/citizen.vmdl" );
@@ -29,8 +35,8 @@ namespace MinimalExample
 			EnableDrawing = true;
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
+			CreateHull();
 
-			base.Respawn();
 		}
 
 		/// <summary>
