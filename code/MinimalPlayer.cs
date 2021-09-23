@@ -7,7 +7,7 @@ namespace MinimalExample
 	partial class MinimalPlayer : Player
 	{
 
-		public virtual void CreateHull()
+		public override void CreateHull()
 		{
 			CollisionGroup = CollisionGroup.Player;
 			AddCollisionLayer( CollisionLayer.Player );
