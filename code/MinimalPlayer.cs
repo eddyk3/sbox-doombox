@@ -58,6 +58,9 @@ namespace MinimalExample
 				ragdoll.SetupPhysicsFromModel( PhysicsMotionType.Dynamic, false );
 				ragdoll.PhysicsGroup.Velocity = EyeRot.Forward * 1000;
 			}
+
+			TickPlayerUse();
+
 		}
 
 		public override void OnKilled()
