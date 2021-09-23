@@ -8,6 +8,18 @@ namespace MinimalExample
 	{
 		public override void Respawn()
 		{
+			Host.AssertServer();
+
+			LifeState = LifeState.Alive;
+			Health = 100;
+			Velocity = Vector3.Zero;
+			WaterLevel.Clear();
+
+			CreateHull();
+
+			Game.Current?.MoveToSpawnpoint( this );
+			ResetInterpolation();
+
 			SetModel( "models/citizen/citizen.vmdl" );
 
 			//
@@ -21,7 +33,7 @@ namespace MinimalExample
 			Animator = new StandardPlayerAnimator();
 
 			//
-			// Use ThirdPersonCamera (you can make your own Camera for 100% control)
+			// Use FirstPersonCamera (you can make your own Camera for 100% control)
 			//
 			Camera = new FirstPersonCamera();
 
@@ -29,9 +41,7 @@ namespace MinimalExample
 			EnableDrawing = true;
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
-			CreateHull();
 
-			base.Respawn();
 		}
 
 		/// <summary>
