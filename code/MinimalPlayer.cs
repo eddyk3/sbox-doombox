@@ -39,11 +39,6 @@ namespace MinimalExample
 	
 		}
 
-		public override void CreateHull()
-		{
-			SetupPhysicsFromAABB( PhysicsMotionType.Keyframed, new Vector3( -16, -16, 0 ), new Vector3( 16, 16, 56 ) );
-		}
-
 		/// <summary>
 		/// Called every tick, clientside and serverside.
 		/// </summary>
