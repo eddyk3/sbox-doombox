@@ -47,20 +47,7 @@ namespace MinimalExample
 
 		public override void CreateHull()
 		{
-			CollisionGroup = CollisionGroup.Player;
-			AddCollisionLayer( CollisionLayer.Player );
 			SetupPhysicsFromAABB( PhysicsMotionType.Keyframed, new Vector3( -16, -16, 0 ), new Vector3( 16, 16, 56 ) );
-
-			//var capsule = new Capsule( new Vector3( 0, 0, 16 ), new Vector3( 0, 0, 72 - 16 ), 32 );
-			//var phys = SetupPhysicsFromCapsule( PhysicsMotionType.Keyframed, capsule );
-
-
-			//	phys.GetBody(0).RemoveShadowController();
-
-			// TODO - investigate this? if we don't set movetype then the lerp is too much. Can we control lerp amount?
-			// if so we should expose that instead, that would be awesome.
-			MoveType = MoveType.MOVETYPE_WALK;
-			EnableHitboxes = true;
 		}
 
 		/// <summary>
