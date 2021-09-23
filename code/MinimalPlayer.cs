@@ -10,12 +10,6 @@ namespace MinimalExample
 		public override void Respawn()
 		{
 
-			Host.AssertServer();
-
-			LifeState = LifeState.Alive;
-			Health = 100;
-			Velocity = Vector3.Zero;
-			WaterLevel.Clear();
 
 			CreateHull();
 
